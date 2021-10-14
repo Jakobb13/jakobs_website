@@ -59,17 +59,17 @@ params:
   image: ''
   name: Your name
   navigation:
-    button1:
-      - name: Get Started
-        url: blogs
-    button2:
-      - name: Log In
-        url: '#'
+  #  button1:
+  #    - name: Get Started
+  #      url: blogs
+  #  button2:
+  #    - name: Log In
+  #      url: '#'
     links:
-      - name: Findings
-        url: '#'
-      - name: Analysis
-        url: blogs
+      - name: Motivation
+        url: blogs/motivation
+      - name: About me
+        url: blogs/abme
     #  - name: Generic Blog
     #    url: blogs/ipsum
     #  - name: Elements
