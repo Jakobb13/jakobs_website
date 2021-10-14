@@ -8,9 +8,8 @@ params:
   banner:
     buttonText: Get Started
     subtitle: |-
-      A RESPONSIVE SITE TEMPLATE DESIGNED BY HTML5 UP
-      AND RELEASED UNDER THE CREATIVE COMMONS.
-    title: Analysis of Assets 
+      A review of asset classes for investors that want to diversify into potentially uncorrelated assets.
+    title: Analysis of Asset Classes
   blog: {}
   contact:
     address: 
@@ -82,31 +81,31 @@ params:
     enable: yes
     showcase:
       - image: pic01.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Aliquam
+        subtitle: a must have for diversified indexers
+        title: Equities
         url: blogs/aliquam
       - image: pic02.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Tempus
+        subtitle: precious metals have been used for centuries
+        title: Hard Commodities
         url: blogs/tempus
       - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
-        title: Magna
+        subtitle: if all goes wrong, you can eat them
+        title: Soft Commodities
         url: blogs/magna
       - image: pic04.jpg
-        subtitle: Nisl Sed Aliquam
-        title: Ipsum
+        subtitle: can we diversify using these assets?
+        title: Analysis
         url: blogs/ipsum
-      - image: pic05.jpg
-        subtitle: Ipsum Dolor Sit Amet
-        title: Consequat
-        url: blogs/ipsum
-      - image: pic06.jpg
-        subtitle: Feugiat Amet Tempus
-        title: Etiam
-        url: blogs/ipsum
-  two:
-    buttonText: Get Started
+     # - image: pic05.jpg
+    #    subtitle: Ipsum Dolor Sit Amet
+    #    title: Consequat
+    #    url: blogs/ipsum
+     # - image: pic06.jpg
+    #    subtitle: Feugiat Amet Tempus
+    #    title: Etiam
+    #    url: blogs/ipsum
+   two:
+    buttonText: Read more
     enable: yes
     subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
       \r\n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \r\n    Pellentesque
