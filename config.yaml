@@ -1,4 +1,4 @@
-baseURL: http://example.org/
+baseURL: https://jakobsrwebsite.netlify.app/
 languageCode: en-us
 title: Portfolio Website for Jakob Bollenberger
 theme: forty
@@ -29,7 +29,7 @@ params:
         title: Phone
   custom_css: []
   custom_js: []
-  description: Your description
+  description: 
   error404:
     heading: Page couldn't be found
     text: Please visit [this page](/)
