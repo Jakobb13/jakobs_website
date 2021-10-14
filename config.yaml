@@ -6,7 +6,7 @@ googleAnalytics: ''
 disqusShortname: ''
 params:
   banner:
-    buttonText: Get Started
+    buttonText: Executive Summary
     subtitle: |-
       A review of asset classes for investors that want to diversify into potentially uncorrelated assets.
     title: Analysis of Asset Classes
@@ -24,7 +24,7 @@ params:
         title: Email
     enable: yes
     phone:
-      - phone: 00436769021999
+      - phone: 0043 676 9021999
         title: Phone
   custom_css: []
   custom_js: []
@@ -80,22 +80,22 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: pic01.jpg
+      - image: equities.jpg
         subtitle: a must have for diversified indexers
         title: Equities
-        url: blogs/aliquam
-      - image: pic02.jpg
+        url: blogs/equities
+      - image: pr_me.jpg
         subtitle: precious metals have been used for centuries
         title: Hard Commodities
-        url: blogs/tempus
-      - image: pic03.jpg
+        url: blogs/h_comms
+      - image: grains.jpg
         subtitle: if all goes wrong, you can eat them
         title: Soft Commodities
-        url: blogs/magna
-      - image: pic04.jpg
+        url: blogs/s_comms
+      - image: analysis.jpg
         subtitle: can we diversify using these assets?
         title: Analysis
-        url: blogs/ipsum
+        url: blogs/analysis
      # - image: pic05.jpg
     #    subtitle: Ipsum Dolor Sit Amet
     #    title: Consequat
@@ -104,9 +104,9 @@ params:
     #    subtitle: Feugiat Amet Tempus
     #    title: Etiam
     #    url: blogs/ipsum
-   two:
-    buttonText: Read more
-    enable: yes
+  two:
+    buttonText: Get Started
+    enable: no
     subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
       \r\n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \r\n    Pellentesque
       condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia
