@@ -83,15 +83,15 @@ params:
       - image: equities.jpg
         subtitle: a must have for diversified indexers
         title: Equities
-        url: blogs/equities
-      - image: pr_me.jpg
-        subtitle: precious metals have been used for centuries
-        title: Hard Commodities
-        url: blogs/h_comms
-      - image: grains.jpg
-        subtitle: if all goes wrong, you can eat them
-        title: Soft Commodities
-        url: blogs/s_comms
+        url: blogs/equities.rmd
+      - image: fi.jpg
+        subtitle: fixed income generates ... fixed income
+        title: Bonds
+        url: blogs/fi.rmd
+      - image: re.jpg
+        subtitle: if all goes wrong, you at least have a place to sleep
+        title: Real Estate
+        url: blogs/re.rmd
       - image: analysis.jpg
         subtitle: can we diversify using these assets?
         title: Analysis

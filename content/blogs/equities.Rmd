@@ -46,3 +46,18 @@ library(lubridate) #to handle dates
 library(ggrepel)
 ```
 
+
+
+
+cpi_data <- read_csv(here::here("data", "cpi_data.csv"))
+
+cpi<-cpi_data %>% 
+  separate(title,into=c("generic","title"),sep=": ") %>%
+  separate(title,into=c("title", "generic_2"), sep=" in U.S.") %>% 
+  mutate(date=dmy(date)) %>% 
+  arrange(date) %>%
+  filter(year(date)>=2015) %>% 
+  group_by(component) %>%
+  mutate(year_change=value/lag(value,12) - 1) %>% 
+  mutate(max_change=max(year_change, na.rm=TRUE))
+
