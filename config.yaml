@@ -83,15 +83,15 @@ params:
       - image: equities.jpg
         subtitle: a must have for diversified indexers
         title: Equities
-        url: blogs/equities.rmd
+        url: blogs/equities
       - image: fi.jpg
         subtitle: fixed income generates ... fixed income
         title: Bonds
-        url: blogs/fi.rmd
+        url: blogs/fi
       - image: re.jpg
         subtitle: if all goes wrong, you at least have a place to sleep
         title: Real Estate
-        url: blogs/re.rmd
+        url: blogs/re
       - image: analysis.jpg
         subtitle: can we diversify using these assets?
         title: Analysis
