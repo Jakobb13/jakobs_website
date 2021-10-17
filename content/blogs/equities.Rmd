@@ -35,6 +35,7 @@ knitr::opts_chunk$set(
 ```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
 library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
 library(lubridate)
+library(quantmod)
 library(here)
 library(skimr)
 library(janitor)
@@ -42,9 +43,65 @@ library(vroom)
 library(tidyquant)
 library(rvest)    # scrape websites
 library(purrr)  
-library(lubridate) #to handle dates
 library(ggrepel)
+library(mosaic)
+library(ggthemes)
+library(here)
+library(skimr)
+library(janitor)
+library(httr)
+library(readxl)
+library(readr)
+library(dplyr)
+
 ```
 
 
+```{r equ,  out.width="100%", include = false}
+
+equ <- read.csv(here::here("data", "URTH.csv"))
+
+
+equ$Date <- as_date(equ$Date, tz = NULL, format = NULL)
+
+glimpse(equ)
+summary(equ)
+
+
+```
+
+```{r equ,  out.width="100%", echo=TRUE}
+
+
+ggplot(equ, aes(y = Adj.Close,x= Date)) + #Plotting a histogram of price
+  geom_line() +
+  #scale_x_log10(labels = scales::comma) + #Changing to Log Scale
+  labs (#Axis Titles and Labels
+    x = "Price",
+    y = "Frequency Density") +
+  ggtitle("Histogram to Show Log Price") +
+  theme_bw()
+```
+
+```{r equ_ret,  out.width="100%", echo=FALSE}
+
+equ_ret <- equ %>%
+  tq_transmute(select     = Adj.Close, 
+               mutate_fun = periodReturn, 
+               period     = "daily", 
+               type       = "log",
+               col_rename = "daily_returns",
+               cols = c(nested.col)) 
+
+ggplot(equ_ret, aes(x = daily_returns)) + #Plotting a histogram of price
+  geom_histogram(aes(y = ..density..), colour = "black", fill = "gray") +
+  #scale_x_log10(labels = scales::comma) + #Changing to Log Scale
+  labs (#Axis Titles and Labels
+    x = "Price",
+    y = "Frequency Density") +
+  ggtitle("Histogram to Show Log Price") +
+  theme_bw() +
+  geom_vline(aes(xintercept = mean(daily_returns)),col='red',size=1, alpha = 0.6)
+
+```
 

@@ -15,3 +15,19 @@ title: Real Estate
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
+<pre class="r"><code>re &lt;- read.csv(here::here(&quot;data&quot;, &quot;VNQ.csv&quot;))
+
+
+re$Date &lt;- as_date(re$Date, tz = NULL, format = NULL)
+
+glimpse(re)</code></pre>
+<pre><code>## Rows: 2,015
+## Columns: 7
+## $ Date      &lt;date&gt; 2013-10-15, 2013-10-16, 2013-10-17, 2013-10-18, 2013-10-21,~
+## $ Open      &lt;dbl&gt; 67.8, 67.9, 68.7, 70.3, 69.8, 69.5, 69.9, 70.4, 70.4, 71.1, ~
+## $ High      &lt;dbl&gt; 68.2, 69.0, 70.1, 70.3, 69.9, 70.4, 70.2, 70.4, 71.1, 71.1, ~
+## $ Low       &lt;dbl&gt; 67.5, 67.8, 68.5, 69.5, 69.1, 69.4, 69.7, 69.8, 70.2, 69.9, ~
+## $ Close     &lt;dbl&gt; 67.6, 68.9, 69.9, 69.9, 69.4, 70.1, 70.2, 70.2, 71.1, 70.5, ~
+## $ Adj.Close &lt;dbl&gt; 48.9, 49.8, 50.6, 50.5, 50.2, 50.7, 50.8, 50.7, 51.4, 51.0, ~
+## $ Volume    &lt;int&gt; 3231700, 3066400, 3258600, 2685200, 2276500, 3611600, 465000~</code></pre>
+<p><img src="/blogs/re_files/figure-html/re_returns-1.png" width="100%" style="display: block; margin: auto;" /></p>
