@@ -31,14 +31,6 @@ title: Fixed Income
 ##  3rd Qu.:80.9   3rd Qu.:77.5   3rd Qu.: 2074400  
 ##  Max.   :83.2   Max.   :82.6   Max.   :41829100</code></pre>
 <p>In the price chart of the bond index the performance over the last eight years can be observed. The performance was positive with a big hit at the beginning of the corona crisis.</p>
-<pre class="r"><code>ggplot(fi, aes(y = Adj.Close,x= Date)) + #Plotting a histogram of price
-  geom_line() +
-  #scale_x_log10(labels = scales::comma) + #Changing to Log Scale
-  labs (#Axis Titles and Labels
-    x = &quot;Date&quot;,
-    y = &quot;Price&quot;) +
-  ggtitle(&quot;Vanguard Short-Term Corporate Bond Index Fund ETF&quot;) +
-  theme_bw()</code></pre>
 <p><img src="/blogs/fi_files/figure-html/fi_plot-1.png" width="100%" style="display: block; margin: auto;" />
 In the histogram we can observe the distribution of returns. It is more centric than the other assets, suggesting that the bonds are not as volatile as the other instruments.</p>
 <p><img src="/blogs/fi_files/figure-html/fi_ret-1.png" width="100%" style="display: block; margin: auto;" /></p>

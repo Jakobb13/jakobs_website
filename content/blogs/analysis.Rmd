@@ -54,6 +54,8 @@ library(readxl)
 library(readr)
 library(dplyr)
 library(markdown)
+library(ggplot2)
+library(GGally)
 ```
 
 ```{r equ,  out.width="100%", include=FALSE}

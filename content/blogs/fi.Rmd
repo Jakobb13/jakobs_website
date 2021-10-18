@@ -74,7 +74,7 @@ summary(fi)
 In the price chart of the bond index the performance over the last eight years can be observed. The performance was positive with a big hit at the beginning of the corona crisis.
 
 
-```{r fi_plot,  out.width="100%", echo=TRUE}
+```{r fi_plot,  out.width="100%", echo=FALSE}
 
 ggplot(fi, aes(y = Adj.Close,x= Date)) + #Plotting a histogram of price
   geom_line() +
