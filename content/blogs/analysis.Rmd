@@ -56,7 +56,7 @@ library(dplyr)
 library(markdown)
 ```
 
-```{r equ,  out.width="100%", include = false}
+```{r equ,  out.width="100%", include=FALSE}
 
 equ1 <- read.csv(here::here("data", "URTH.csv"))
 
@@ -73,7 +73,7 @@ equ1_ret <- equ1 %>%
 
 ```
 
-```{r fi,  out.width="100%", include = false}
+```{r fi,  out.width="100%", include=FALSE}
 
 fi1 <- read.csv(here::here("data", "VCSH.csv"))
 
@@ -91,7 +91,7 @@ fi1_ret <- fi1 %>%
 ```
 
 
-```{r re,  out.width="100%", include = false}
+```{r re,  out.width="100%", include=FALSE}
 
 re1 <- read.csv(here::here("data", "VNQ.csv"))
 
@@ -108,7 +108,9 @@ re1_ret <- re1 %>%
 
 ```
 
-```{r analysis,  out.width="100%", include = false}
+On this page we can see the correlation analysis between the different asset classes. Surprisingly, real estate and equities have a high correlation of 0.7. This leads to the conclusion, that real estate might not be the best asset to further diversify an equities portfolio. However, equities and fixed income have a lower correlation value of 0.228. In conclusion, an equities investor would be better off diversifying into fixed income than in real estate. Finally, real estate and fixed income have a correlation of 0.347. This is worse than the equities to fixed income value but still it seems that real estate can be used to diversify a fixed income portfolio and the other way around.
+
+```{r analysis,  out.width="100%", echo=FALSE}
 
 analysis <- data.frame(re1_ret$daily_returns_re, equ1_ret$daily_returns_equ, fi1_ret$daily_returns_fi)
 
@@ -118,13 +120,10 @@ analysis <- analysis %>%
     Equities = equ1_ret.daily_returns_equ,
     Fixed_Income = fi1_ret.daily_returns_fi
     )
-  
-  
-  
-  
+
 analysis %>% 
   select(Equities, Real_Estate, Fixed_Income) %>%
-  ggpairs(aes(alpha = 0.2))+
+  ggpairs() +
   theme_bw() 
 
 ```

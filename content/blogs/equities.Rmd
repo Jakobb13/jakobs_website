@@ -57,32 +57,36 @@ library(markdown)
 
 ```
 
+For the equities, finding a proper asset is not hard. As I want to analyse the possibilities for global investors without a local bias, I decided to use the iShares MSCI World ETF. This index represents a global equity portfolio and fits the criteria for the analysis. Also here, the dataset contains observations for the last eight years. A summary can be found below.
 
-```{r equ,  out.width="100%", include = false}
+```{r equ,  out.width="100%", echo=FALSE}
 
 equ <- read.csv(here::here("data", "URTH.csv"))
 
 
 equ$Date <- as_date(equ$Date, tz = NULL, format = NULL)
 
-glimpse(equ)
 summary(equ)
 
 
 ```
 
-```{r equ,  out.width="100%", echo=TRUE}
+In the chart below we can see the price development over the last eight years. The index delivered strong performance and only at the beginning of the corona crisis a big hit was taken.
+
+```{r equ_plot,  out.width="100%", echo=FALSE}
 
 
-ggplot(equ, aes(y = Adj.Close,x= Date)) + #Plotting a histogram of price
+ggplot(equ, aes(y = Adj.Close,x= Date)) +
   geom_line() +
   #scale_x_log10(labels = scales::comma) + #Changing to Log Scale
   labs (#Axis Titles and Labels
-    x = "Price",
-    y = "Frequency Density") +
-  ggtitle("Histogram to Show Log Price") +
+    x = "Date",
+    y = "Price") +
+  ggtitle("iShares MSCI World ETF") +
   theme_bw()
 ```
+
+In the histogram we can see the distribution of the daily returns for the sample. In the equities market, the majority of returns was between 5% and -5%. There have been some outliers, with a more extrem negative side.
 
 ```{r equ_ret,  out.width="100%", echo=FALSE}
 
@@ -98,9 +102,9 @@ ggplot(equ_ret, aes(x = daily_returns)) + #Plotting a histogram of price
   geom_histogram(aes(y = ..density..), colour = "black", fill = "gray") +
   #scale_x_log10(labels = scales::comma) + #Changing to Log Scale
   labs (#Axis Titles and Labels
-    x = "Price",
+    x = "Return",
     y = "Frequency Density") +
-  ggtitle("Histogram to Show Log Price") +
+  ggtitle("iShares MSCI World ETF") +
   theme_bw() +
   geom_vline(aes(xintercept = mean(daily_returns)),col='red',size=1, alpha = 0.6)
 

@@ -57,7 +57,7 @@ library(markdown)
 
 ```
 
-```{r re,  out.width="100%", include = false}
+```{r re,  out.width="100%", include=FALSE}
 
 re <- read.csv(here::here("data", "VNQ.csv"))
 
@@ -65,27 +65,36 @@ re <- read.csv(here::here("data", "VNQ.csv"))
 re$Date <- as_date(re$Date, tz = NULL, format = NULL)
 
 glimpse(re)
+
+````
+
+Measuring real estate returns is not easy, as it usually is an unlisted asset. However, we can use an index that is focussed on real estate investments to calculate the returns. For this analysis, the Vanguard Real Estate Index Fund ETF Shares will be used. Below we can see a summary of the given data, which consists of the date, the daily open, high, low, and close and the traded volume. The used sample contains data from 15-10-2013 to 14-10-2021. So we have daily data for eight years.
+
+
+```{r summary,  out.width="100%", echo=FALSE}
+
 summary(re)
 
+````
 
-```
+In the chart below we can see the closing price development on the real estate index.
 
-```{r re_returns,  out.width="100%", echo=TRUE}
+```{r re_plot,  out.width="100%", echo=FALSE}
 
 
 ggplot(re, aes(y = Adj.Close,x= Date)) + #Plotting a histogram of price
   geom_line() +
-  #scale_x_log10(labels = scales::comma) + #Changing to Log Scale
   labs (#Axis Titles and Labels
-    x = "Price",
-    y = "Frequency Density") +
-  ggtitle("Histogram to Show Log Price") +
+    x = "Date",
+    y = "Price") +
+  ggtitle("Vanguard Real Estate Index Fund ETF Shares") +
   theme_bw()
 
 ```
 
+From the histogram below we can read the distribution of the daily returns of real estate over the last eight years. It can be observed that most of the returns have been between 5% and -5%, and there are vast outliers, especially to the negative side.
 
-```{r re_returns,  out.width="100%", echo=FALSE}
+```{r re_returns_hist,  out.width="100%", echo=FALSE}
 
 re_ret <- re %>%
   tq_transmute(select     = Adj.Close, 
@@ -99,9 +108,9 @@ ggplot(re_ret, aes(x = daily_returns)) + #Plotting a histogram of price
   geom_histogram(aes(y = ..density..), colour = "black", fill = "gray") +
   #scale_x_log10(labels = scales::comma) + #Changing to Log Scale
   labs (#Axis Titles and Labels
-    x = "Price",
+    x = "Returns",
     y = "Frequency Density") +
-  ggtitle("Histogram to Show Log Price") +
+  ggtitle("Distribution of Real Estate Returns") +
   theme_bw() +
   geom_vline(aes(xintercept = mean(daily_returns)),col='red',size=1, alpha = 0.6)
 

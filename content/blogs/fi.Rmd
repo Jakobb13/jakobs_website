@@ -57,34 +57,37 @@ library(markdown)
 
 ```
 
+For the anylsis of debt instruments I will use the Vanguard Short-Term Corporate Bond Index Fund ETF. It is an index designed to track the performance of a diversified portfolio of corporate debt with a short term maturity.
 
-```{r fi,  out.width="100%", include = false}
+```{r fi,  out.width="100%", echo=FALSE}
 
 fi <- read.csv(here::here("data", "VCSH.csv"))
 
 
 fi$Date <- as_date(fi$Date, tz = NULL, format = NULL)
 
-glimpse(fi)
 summary(fi)
 
 
 ```
 
-```{r equ,  out.width="100%", echo=TRUE}
+In the price chart of the bond index the performance over the last eight years can be observed. The performance was positive with a big hit at the beginning of the corona crisis.
 
+
+```{r fi_plot,  out.width="100%", echo=TRUE}
 
 ggplot(fi, aes(y = Adj.Close,x= Date)) + #Plotting a histogram of price
   geom_line() +
   #scale_x_log10(labels = scales::comma) + #Changing to Log Scale
   labs (#Axis Titles and Labels
-    x = "Price",
-    y = "Frequency Density") +
-  ggtitle("Histogram to Show Log Price") +
+    x = "Date",
+    y = "Price") +
+  ggtitle("Vanguard Short-Term Corporate Bond Index Fund ETF") +
   theme_bw()
 ```
+In the histogram we can observe the distribution of returns. It is more centric than the other assets, suggesting that the bonds are not as volatile as the other instruments.
 
-```{r equ_ret,  out.width="100%", echo=FALSE}
+```{r fi_ret,  out.width="100%", echo=FALSE}
 
 fi_ret <- fi %>%
   tq_transmute(select     = Adj.Close, 
@@ -98,9 +101,9 @@ ggplot(fi_ret, aes(x = daily_returns)) + #Plotting a histogram of price
   geom_histogram(aes(y = ..density..), colour = "black", fill = "gray") +
   #scale_x_log10(labels = scales::comma) + #Changing to Log Scale
   labs (#Axis Titles and Labels
-    x = "Price",
+    x = "Returns",
     y = "Frequency Density") +
-  ggtitle("Histogram to Show Log Price") +
+  ggtitle("Vanguard Short-Term Corporate Bond Index Fund ETF") +
   theme_bw() +
   geom_vline(aes(xintercept = mean(daily_returns)),col='red',size=1, alpha = 0.6)
 

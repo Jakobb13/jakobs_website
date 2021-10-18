@@ -15,3 +15,22 @@ title: Equities
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
+<p>For the equities, finding a proper asset is not hard. As I want to analyse the possibilities for global investors without a local bias, I decided to use the iShares MSCI World ETF. This index represents a global equity portfolio and fits the criteria for the analysis. Also here, the dataset contains observations for the last eight years. A summary can be found below.</p>
+<pre><code>##       Date                 Open            High            Low       
+##  Min.   :2013-10-15   Min.   : 60.9   Min.   : 61.5   Min.   : 60.0  
+##  1st Qu.:2015-10-14   1st Qu.: 72.1   1st Qu.: 72.3   1st Qu.: 71.7  
+##  Median :2017-10-13   Median : 82.1   Median : 82.3   Median : 81.8  
+##  Mean   :2017-10-15   Mean   : 85.2   Mean   : 85.6   Mean   : 84.8  
+##  3rd Qu.:2019-10-15   3rd Qu.: 91.7   3rd Qu.: 92.1   3rd Qu.: 91.2  
+##  Max.   :2021-10-14   Max.   :133.1   Max.   :133.2   Max.   :132.7  
+##      Close         Adj.Close         Volume       
+##  Min.   : 61.2   Min.   : 54.8   Min.   :      0  
+##  1st Qu.: 72.0   1st Qu.: 63.5   1st Qu.:  10400  
+##  Median : 82.2   Median : 76.4   Median :  27400  
+##  Mean   : 85.2   Mean   : 79.6   Mean   :  64737  
+##  3rd Qu.: 91.7   3rd Qu.: 87.5   3rd Qu.:  67350  
+##  Max.   :133.1   Max.   :133.1   Max.   :1234500</code></pre>
+<p>In the chart below we can see the price development over the last eight years. The index delivered strong performance and only at the beginning of the corona crisis a big hit was taken.</p>
+<p><img src="/blogs/equities_files/figure-html/equ_plot-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>In the histogram we can see the distribution of the daily returns for the sample. In the equities market, the majority of returns was between 5% and -5%. There have been some outliers, with a more extrem negative side.</p>
+<p><img src="/blogs/equities_files/figure-html/equ_ret-1.png" width="100%" style="display: block; margin: auto;" /></p>
